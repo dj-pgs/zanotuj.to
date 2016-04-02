@@ -8,6 +8,8 @@ namespace Zanotuj.To.WebApplication.Repository
     {
         public IDbSet<Note> Notes { get; set; }
 
+        public IDbSet<HashTag>  HashTags { get; set; } 
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

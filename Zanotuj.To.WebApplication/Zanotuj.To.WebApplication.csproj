@@ -219,13 +219,19 @@
     <Compile Include="Migrations\201604011543450_Add note entity.Designer.cs">
       <DependentUpon>201604011543450_Add note entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604021134464_Add Hashtag.cs" />
+    <Compile Include="Migrations\201604021134464_Add Hashtag.Designer.cs">
+      <DependentUpon>201604021134464_Add Hashtag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountLoginViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Repository\ApplicationDbContext.cs" />
     <Compile Include="Repository\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BusinessModel.cs" />
+    <Compile Include="Repository\HashTag.cs" />
     <Compile Include="Repository\IApplicationDbContext.cs" />
     <Compile Include="Repository\Note.cs" />
     <Compile Include="Services\NoteService.cs" />
@@ -831,7 +837,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Login_old.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -845,6 +851,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\Home\Note.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -862,6 +869,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604011543450_Add note entity.resx">
       <DependentUpon>201604011543450_Add note entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604021134464_Add Hashtag.resx">
+      <DependentUpon>201604021134464_Add Hashtag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
