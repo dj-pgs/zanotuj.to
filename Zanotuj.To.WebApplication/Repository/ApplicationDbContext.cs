@@ -1,4 +1,6 @@
+using System;
 using System.Data.Entity;
+using System.Diagnostics;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Zanotuj.To.WebApplication.Models;
 
@@ -13,7 +15,9 @@ namespace Zanotuj.To.WebApplication.Repository
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-
+#if DEBUG
+            Database.Log =(entry)=>Debug.WriteLine(entry);
+#endif
         }
 
         protected override void Dispose(bool disposing)

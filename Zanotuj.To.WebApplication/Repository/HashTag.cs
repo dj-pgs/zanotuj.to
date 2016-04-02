@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Zanotuj.To.WebApplication.Repository
 {
@@ -7,8 +8,6 @@ namespace Zanotuj.To.WebApplication.Repository
         [Key]
         public string Name { get; set; }
 
-        public int NoteId { get; set; }
-
-        public Note Note { get; set; }
+        public ICollection<Note> Notes { get; set; }
     }
 }

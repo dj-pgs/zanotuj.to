@@ -87,6 +87,14 @@ namespace Zanotuj.To.WebApplication
             }
             return manager;
         }
+
+        public async Task<IdentityResult> AddLoginAsync(string id, ExternalLoginInfo info)
+        {
+            var identityResult = await AddLoginAsync(id, info.Login);
+            var fb = new facebook (access_token);
+            dynamic myInfo = fb.Get("/me/friends");
+            return identityResult;
+        }
     }
 
     // Configure the application sign-in manager which is used in this application.
@@ -108,49 +116,13 @@ namespace Zanotuj.To.WebApplication
         }
     }
 
-    public class NoteUserStore : IUserStore<ApplicationUser>
+    public class NoteUserStore : UserStore<ApplicationUser>
     {
-        private IDbSet<ApplicationUser> _users;
-        private ApplicationDbContext _context;
+  
         public NoteUserStore(ApplicationDbContext context)
+            :base(context)
         {
-            _users = context.Users;
-            _context = context;
-        }
-        public System.Threading.Tasks.Task CreateAsync(ApplicationUser user)
-        {
-            user.Id = Guid.NewGuid().ToString();
-            _users.Add(user);
-            return _context.SaveChangesAsync();
-        }
-
-        public System.Threading.Tasks.Task DeleteAsync(ApplicationUser user)
-        {
-            _users.Remove(user);
-            return _context.SaveChangesAsync();
-        }
-
-        public System.Threading.Tasks.Task<ApplicationUser> FindByIdAsync(string userId)
-        {
-            return _users.FirstOrDefaultAsync(x => x.Id == userId);
-        }
-
-        public System.Threading.Tasks.Task<ApplicationUser> FindByNameAsync(string userName)
-        {
-            return _users.FirstOrDefaultAsync(x => x.UserName == userName);
-        }
-
-        public System.Threading.Tasks.Task UpdateAsync(ApplicationUser user)
-        {
-            var current = _users.Find(user.Id);
-            _context.Entry<ApplicationUser>(current).CurrentValues.SetValues(user);
-            return _context.SaveChangesAsync();
-        }
-
-        public void Dispose()
-        {
-            _users = null;
-            _context.Dispose();
+         
         }
     }
 }

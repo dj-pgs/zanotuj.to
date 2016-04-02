@@ -5,9 +5,15 @@ namespace Zanotuj.To.WebApplication.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Pole jest wymagane")]
         [Display(Name = "Email")]
+        [EmailAddress]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Pole jest wymagane")]
+        [Display(Name = "Twój nick")]
+        [RegularExpression("^[a-zA-Z][a-zA-Z0-9]{3,11}$", ErrorMessage = "Nick jest niepoprawy")]
+        public string Nick { get; set; }
     }
 
     public class ExternalLoginListViewModel

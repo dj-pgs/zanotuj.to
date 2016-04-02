@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Practices.Unity;
 using Owin;
@@ -17,9 +20,9 @@ namespace Zanotuj.To.WebApplication
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            
+
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext<ApplicationDbContext>(()=>
+            app.CreatePerOwinContext<ApplicationDbContext>(() =>
             {
                 UnityContainer container = UnityConfig.GetConfiguredContainer() as UnityContainer;
                 return container.Resolve<ApplicationDbContext>();
@@ -43,7 +46,7 @@ namespace Zanotuj.To.WebApplication
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -62,10 +65,24 @@ namespace Zanotuj.To.WebApplication
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
+            //    context.Identity.AddClaim(new System.Security.Claims.Claim("urn:facebook:access_token", context.AccessToken, ClaimValueTypes.String, "Facebook"));
+            var facebookOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "478650292343362",
+                AppSecret = "03d267ec4d34f19a9b3d2af04db0b8be",
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("urn:facebook:access_token",
+                            context.AccessToken, ClaimValueTypes.String, "Facebook"));
+                        return Task.FromResult(0);
+                    }
+                }
+            };
+            facebookOptions.Scope.Add("public_profile");
+            app.UseFacebookAuthentication(facebookOptions);
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

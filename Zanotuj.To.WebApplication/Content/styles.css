@@ -15,7 +15,7 @@ body {
     text-transform: lowercase;
 }
 
-.navbar-default .navbar-nav>li {
+.navbar-default .navbar-nav > li {
     line-height: 74px;
 }
 
@@ -37,27 +37,27 @@ body {
     padding: 80px 0;
 }
 
-.bg-light h3 {
-    margin-top: 0;
-    font-size: 36px;
-}
+    .bg-light h3 {
+        margin-top: 0;
+        font-size: 36px;
+    }
 
-.bg-light .meta {
-    color: #ff7726;
-    font-size: 14px;
-}
+    .bg-light .meta {
+        color: #ff7726;
+        font-size: 14px;
+    }
 
-.bg-light .date {
-    font-size: 12px;
-    color: #ccc;
-}
+    .bg-light .date {
+        font-size: 12px;
+        color: #ccc;
+    }
 
-.bg-light .author {
-    margin: 30px 0;
-    color: #ff7726;
-    font-weight: bold;
-    font-size: 18px;
-}
+    .bg-light .author {
+        margin: 30px 0;
+        color: #ff7726;
+        font-weight: bold;
+        font-size: 18px;
+    }
 
 .bg-dark h2 {
     text-align: center;
@@ -106,12 +106,12 @@ body {
     color: #a8a8a8;
 }
 
-.note .date:after {
-    content: " ";
-    border-bottom: 1px solid #a8a8a8;
-    width: 15px;
-    display: block;
-}
+    .note .date:after {
+        content: " ";
+        border-bottom: 1px solid #a8a8a8;
+        width: 15px;
+        display: block;
+    }
 
 .main.container {
     background-image: url('../assets/footer_graphic.png');
@@ -130,9 +130,9 @@ body {
     font-size: 14px;
 }
 
-.author .avatar {
-    margin-right: 10px;
-}
+    .author .avatar {
+        margin-right: 10px;
+    }
 
 .meta {
     margin: -5px;
@@ -141,15 +141,15 @@ body {
     line-height: 16px;
 }
 
-.meta .hashtag {
-    background-color: #f0f0f0;
-    color: #ff7726;
-    width: 24px;
-    text-align: center;
-    font-weight: bold;
-    margin-right: 10px;
-    float: left;
-}
+    .meta .hashtag {
+        background-color: #f0f0f0;
+        color: #ff7726;
+        width: 24px;
+        text-align: center;
+        font-weight: bold;
+        margin-right: 10px;
+        float: left;
+    }
 
 footer {
     background-color: black;
@@ -161,14 +161,14 @@ footer {
     text-align: center;
 }
 
-#login .main.container .form-group {
-    text-align: left;
-}
+    #login .main.container .form-group {
+        text-align: left;
+    }
 
-#login .main.container .content {
-    max-width: 350px;
-    width: 100%;
-}
+    #login .main.container .content {
+        max-width: 350px;
+        width: 100%;
+    }
 
 #login input[type="submit"] {
     margin: 40px 0;
@@ -193,32 +193,32 @@ footer {
     margin-bottom: 40px;
 }
 
-#login .content .divider > div {
-    background-color: white;
-    position: relative;
-    z-index: 2;
-    margin: auto;
-    width: 50px;
-}
+    #login .content .divider > div {
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        margin: auto;
+        width: 50px;
+    }
 
-#login .content .divider:before {
-    content: " ";
-    width: 100%;
-    max-width: 350px;
-    display: block;
-    border: 1px solid #f0f0f0;
-    position: absolute;
-    margin-top: 10px;
-}
+    #login .content .divider:before {
+        content: " ";
+        width: 100%;
+        max-width: 350px;
+        display: block;
+        border: 1px solid #f0f0f0;
+        position: absolute;
+        margin-top: 10px;
+    }
 
 .actions {
     line-height: 48px;
     font-size: 16px;
 }
 
-.actions .remove {
-    color: red;
-}
+    .actions .remove {
+        color: red;
+    }
 
 .full-note.content h3 {
     font-size: 24px;
@@ -237,4 +237,14 @@ footer {
 #add-note h3 {
     font-size: 24px;
     margin-bottom: 80px;
+}
+
+input.fbButton {
+    background: url(../assets/fb.jpg) no-repeat scroll 0 0 transparent;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    width: 234px;
+    height: 41px;
+    border-width: 0;
 }
