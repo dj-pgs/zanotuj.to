@@ -1,0 +1,26 @@
+.icon-loader {
+  font-size: 35px;
+  color: $orange;
+  line-height: 1.12;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  vertical-align: middle;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+
+  &.lg {
+    font-size: 61px;
+    width: 61px;
+    height: 61px;
+
+    &:before {
+      top: -3px;
+    }
+  }
+}
+

@@ -35,5 +35,10 @@ namespace Zanotuj.To.WebApplication.Controllers
 
             return View();
         }
+
+        public ActionResult Note()
+        {
+            return View();
+        }
     }
 }

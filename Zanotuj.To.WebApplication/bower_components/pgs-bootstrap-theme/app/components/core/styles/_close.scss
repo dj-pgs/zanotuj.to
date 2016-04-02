@@ -1,0 +1,32 @@
+// Custom close styling, based on bootstrap _close.scss
+
+.close {
+  float: right;
+  font-size: 13px;
+  color: inherit;
+  .icon:before {
+    line-height: 22px;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.8;
+  }
+
+  // [converter] extracted button& to button.close
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}

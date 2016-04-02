@@ -1,0 +1,40 @@
+.color-box {
+	width: 80px;
+	height: 80px;
+
+	&.orange {
+		background-color: $orange;
+	}
+
+	&.orange-dark {
+		background-color: $orange-dark;
+	}
+
+	&.black {
+		background-color: $black;
+	}
+
+	&.gray {
+		background-color: $gray;
+	}
+
+	&.gray-light {
+		background-color: $gray-light;
+	}
+
+	&.gray-lighter {
+		background-color: $gray-lighter;
+	}
+
+	&.green {
+		background-color: $green;
+	}
+
+	&.red {
+		background-color: $red;
+	}
+
+	&.red-light {
+		background-color: $red-light;
+	}
+}

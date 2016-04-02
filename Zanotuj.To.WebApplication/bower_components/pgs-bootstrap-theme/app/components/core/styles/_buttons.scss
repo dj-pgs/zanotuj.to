@@ -1,0 +1,183 @@
+//Custom buttons, sizing set in _bootstrap-custom-variables.scss
+.btn {
+    @include transition(all 0.2s ease-in-out);
+    margin-left: 12px;
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right:12px;
+    }
+
+    .text-right &:last-child {
+        margin-right: 0;
+    }
+
+    .text-right &:first-child {
+        margin-left: 12px;
+    }
+
+    &.pull-right {
+        margin-left: 16px;
+
+        &:first-child {
+            margin-left: 16px;
+        }
+
+    }
+
+
+}
+
+.input-group {
+    margin-bottom: 11px;
+    .open > .dropdown-menu {
+        margin-left: 0;
+    }
+}
+
+.input-group-btn .btn {
+    margin: 0;
+}
+
+.btn:not(.btn-xs):not(.btn-lg):not(.btn-third) {
+    padding-left: $btn-padding;
+    padding-right: $btn-padding;
+    height: 45px;
+}
+
+.btn-xs {
+    font-size: 12px;
+    padding-left: $btn-small-padding;
+    padding-right: $btn-small-padding;
+}
+
+.btn.btn-first {
+    &,
+    &:link,
+    &:visited {
+        background-color: $orange;
+        border: 3px solid $orange;
+        color: #fff;
+        .bg-color &:not([disabled]) {
+            background-color: #fff;
+            color: $orange;
+        }
+    }
+    &:active,
+    &:hover {
+        background-color: $orange-dark;
+
+        border-color: $orange-dark;
+        .bg-color &:not([disabled]) {
+            color: #fff;
+            background-color: $orange-dark;
+            border-color: $orange-dark;
+        }
+    }
+    &[disabled],
+    fieldset[disabled] &
+    {
+        background-color: $gray;
+        border: 3px solid $gray;
+        opacity: 1;
+        color: white;
+        .bg-color & {
+            background-color: #d7d7d7;
+            border-color: #d7d7d7;
+        }
+    }
+}
+
+.btn-second {
+    &,
+    &:link,
+    &:visited {
+        background-color: transparent;
+        color: $orange;
+        border: 3px solid $orange;
+        .bg-color &:not([disabled]) {
+            color: white;
+            border: 3px solid white;
+        }
+    }
+    &:active,
+    &:hover {
+        color: $orange-dark;
+        border: 3px solid $orange-dark;
+
+        .bg-color &:not([disabled]) {
+            border: 3px solid $orange-dark;
+            color: $orange-dark;
+        }
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        border-color: $gray;
+        color: $gray;
+        opacity: 1;
+        .bg-color & {
+            border-color: #d7d7d7;
+            color: #d7d7d7;
+        }
+    }
+}
+
+.btn-third {
+    font-size: 14px;
+    padding-left: 0;
+    padding-right: 0;
+    &,
+    &:link,
+    &:visited {
+        background-color: transparent;
+        border: none;
+        text-decoration: underline;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        color: $gray;
+        .bg-color & {
+            color: #d7d7d7;
+        }
+    }
+}
+
+.bg-dark,
+.bg-color {
+    .btn-third {
+        color: white;
+    }
+}
+
+.btn-dropdown {
+    &,
+    &:link,
+    &:visited,
+    &:hover {
+        font-weight: 400;
+        background-color: transparent;
+        border: 1px solid $gray-light;
+    }
+    &:active {
+        color: $orange-dark;
+
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        border-color: $gray;
+        color: $gray;
+    }
+}
+
+.btn-group {
+    margin: 5px;
+}

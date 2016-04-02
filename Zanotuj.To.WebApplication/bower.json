@@ -1,0 +1,23 @@
+{
+  "name": "zanotuj.to",
+  "authors": [
+    "Mateusz Spychaj (PGS Software) <mspychaj@pgs-soft.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pgs-bootstrap-theme": "git+https://bitbucket.pgs-soft.com/scm/pfp/pgs-bootstrap-theme.git",
+    "tinymce": "^4.3.8"
+  }
+}

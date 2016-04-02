@@ -1,0 +1,35 @@
+.upload {
+	min-width: 300px;
+	min-height: 150px;
+
+	.preview {
+		width: 25%;
+		margin-left: 5%;
+		background-color: $gray-lighter;
+		border: 1px solid $gray;
+		min-height: 150px;
+		float: left;
+		text-align: center;
+		i {
+			font-size: 60px;
+			color: $gray;
+		}
+		label {
+			color: $gray;
+			font-size: 16px;
+		}
+	}
+	.placeToDrag {
+		width: 70%;
+		border: 1px dashed $gray-light;
+		min-height: 150px;
+		float: left;
+		text-align: center;
+		span {
+			width: 100%;
+			text-align: center;
+			display: block;
+			line-height: 45px;
+		}
+	}
+}

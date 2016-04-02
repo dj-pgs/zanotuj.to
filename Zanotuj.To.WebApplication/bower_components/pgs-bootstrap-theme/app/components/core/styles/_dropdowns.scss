@@ -1,0 +1,37 @@
+.dropdown {
+    .btn:not(.btn-xs):not(.btn-lg):not(.btn-third) {
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: left;
+        margin:0;
+    }
+    .icon {
+        font-size: 13px;
+    }
+    & .dropdown-toggle .icon {
+        margin-left: 10px;
+
+        vertical-align: middle;
+        float: right;
+    }
+    //&.navbar-dropdown .dropdown-toggle .icon {
+    //    margin-left: 16px;
+    //    vertical-align: text-top;
+    //}
+    
+}
+
+form .open > .dropdown-menu {
+
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    margin-top: -1px;
+
+    background-color: $gray-lighter;
+
+    .btn-block + & {
+        min-width: 100%;
+    }
+}

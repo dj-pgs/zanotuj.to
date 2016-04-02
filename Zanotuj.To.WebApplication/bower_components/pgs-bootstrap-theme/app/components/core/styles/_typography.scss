@@ -1,0 +1,112 @@
+//Header sizes configured in _bootstrap-custom-variables.scss
+h1 {
+    line-height: $line-height-h1;
+}
+
+h2 {
+    line-height: $line-height-h2;
+}
+
+h3 {
+    line-height: $line-height-h3;
+}
+
+h4 {
+    line-height: $line-height-h4;
+    font-weight: 400;
+}
+
+label,
+.label {
+    font-weight: normal;
+    line-height: 18px;
+    font-size: 16px;
+}
+
+.label {
+    background-color: $gray;
+    &.label-success {
+        background-color: $green;
+    }
+    &.label-warning {
+        background-color: $state-warning-bg;
+    }
+    &.label-danger {
+        background-color: $red;
+    }
+    &.label-info {
+        background-color: $blue;
+    }
+}
+.lead a {
+    font-size: 16px;
+}
+.alert-block {
+    background-color: $state-warning-bg;
+    border: 1px solid $state-warning-border;
+    color: $state-warning-text;
+}
+
+.subheader {
+    @extend h4
+}
+
+.large {
+    font-size: 18px;
+}
+
+.text-color {
+    color: $orange;
+}
+
+.text-light {
+    font-weight: 100;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.panel p {
+    padding: 10px 15px;
+}
+
+p > a:not(.btn),
+.link,
+.alert a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: $gray;
+}
+.form-control[disabled]::-webkit-input-placeholder {
+    color: $gray-light;
+}
+
+.form-control:-moz-placeholder {
+    color: $gray;
+}
+
+.form-control::-moz-placeholder {
+    color: $gray;
+}
+
+.form-control:-ms-input-placeholder {
+    color: $gray;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.textarea-with-counter .counter {
+    float: right;
+    color: $gray;
+    font-size: 12px;
+}

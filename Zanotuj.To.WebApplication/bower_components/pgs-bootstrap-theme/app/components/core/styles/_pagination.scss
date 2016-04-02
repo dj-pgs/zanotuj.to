@@ -1,0 +1,30 @@
+.pagination > li > a, .pagination > li > span {
+	border: 0;
+	color: black;
+	border: 2px solid transparent;
+	padding: 6px 8px;
+}
+ul.pagination > li {
+	& > a:hover {
+		border: 2px solid $orange;
+		background-color: transparent;
+		color: $orange;
+	}
+	&:first-child, &:last-child {
+		& > a {
+			color: $orange;
+			text-decoration: underline;
+		}
+		& > a:hover {
+			color: $orange-dark;
+			border: 2px solid transparent;
+			background-color: transparent;
+			& > span {
+				font-weight: normal;
+			}
+		}
+	}
+	&.disabled > span, &.disabled > a, &.disabled > span:hover, &.disabled > a:hover {
+		border-color: transparent;
+	}
+}
