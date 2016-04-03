@@ -19,7 +19,7 @@ namespace Zanotuj.To.WebApplication.Controllers
         public ActionResult Index()
         {
             var notes = _noteService.GetNotes();
-            return View();
+            return View(notes);
         }
 
         public ActionResult About()

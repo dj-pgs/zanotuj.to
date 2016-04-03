@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -84,6 +88,7 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.0.20505.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -212,10 +217,12 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebUserContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\NoteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,9 +238,18 @@
     <Compile Include="Migrations\201604021241280_Change relation.Designer.cs">
       <DependentUpon>201604021241280_Change relation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604022013483_Change user foreign key.cs" />
+    <Compile Include="Migrations\201604022013483_Change user foreign key.Designer.cs">
+      <DependentUpon>201604022013483_Change user foreign key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604022039160_Change user foreign key v2.cs" />
+    <Compile Include="Migrations\201604022039160_Change user foreign key v2.Designer.cs">
+      <DependentUpon>201604022039160_Change user foreign key v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountLoginViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\NoteAddViewModel.cs" />
     <Compile Include="Repository\ApplicationDbContext.cs" />
     <Compile Include="Repository\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -861,7 +877,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\Home\Note.cshtml" />
-    <Content Include="Views\Shared\_LoginAvatar.cshtml" />
+    <None Include="Views\Note\Add.cshtml" />
+    <None Include="Views\Note\Edit.cshtml" />
+    <None Include="Views\Note\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -884,6 +902,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604021241280_Change relation.resx">
       <DependentUpon>201604021241280_Change relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604022013483_Change user foreign key.resx">
+      <DependentUpon>201604022013483_Change user foreign key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604022039160_Change user foreign key v2.resx">
+      <DependentUpon>201604022039160_Change user foreign key v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

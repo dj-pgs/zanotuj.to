@@ -19,6 +19,10 @@ body {
     line-height: 74px;
 }
 
+.navbar li > img {
+    margin: 0 5px;
+}
+
 #login .navbar-default,
 #add-note .navbar-default {
     border-bottom: 1px solid #ccc;
@@ -26,6 +30,7 @@ body {
 
 .selectize-input input {
     width: 100% !important;
+    color: #ff7726;fu
 }
 
 .bg-dark {
@@ -113,6 +118,18 @@ body {
         display: block;
     }
 
+.container .note * {
+    word-break: break-all;
+
+}
+
+.container .note h2, .container .note h3, .container .note h4 {
+    font-size: 14px;
+}
+.container .note h1 {
+    font-size: 24px;
+    
+}
 .main.container {
     background-image: url('../assets/footer_graphic.png');
     background-repeat: no-repeat;

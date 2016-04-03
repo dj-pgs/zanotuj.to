@@ -10,5 +10,10 @@ namespace Zanotuj.To.WebApplication.Repository
 
         public DateTime UpdateTime { get; set; }
 
+        public BusinessModel()
+        {
+            CreateTime=UpdateTime=DateTime.Now;
+        }
+
     }
 }

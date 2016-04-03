@@ -1,0 +1,45 @@
+﻿@model Zanotuj.To.WebApplication.Models.NoteAddViewModel
+
+@{
+    ViewBag.Title = "Dodaj notatkę";
+    ViewBag.BodyId = "add-note";
+}
+@section scripts
+{
+    <script src="~/bower_components/tinymce/tinymce.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            tinymce.init({
+                selector: '.editor'
+            });
+        });
+    </script>
+}
+<div class="container">
+    <div class="col-md-8">
+        <h3>Utwórz notatkę</h3>
+        @using (Html.BeginForm("Add", "Note", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <fieldset>
+                <div class="form-group text-color">
+
+                    @Html.LabelFor(m => m.Title)
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group text-color">
+                    @Html.LabelFor(m => m.Content)
+                    @Html.TextAreaFor(m => m.Content, new { @class = "editor" })
+                    @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+
+            <div class="selectize form-group form-inline">
+                @Html.TextBoxFor(m => m.HashTags, new { placeholder = "Podaj hashtagi oddzielając przecinkami" })
+            </div>
+
+            <input type="submit" class="btn btn-second" value="Opublikuj" />
+        }
+    </div>
+</div>

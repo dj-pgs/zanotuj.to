@@ -7,5 +7,9 @@ namespace Zanotuj.To.WebApplication.Repository
     {
         IDbSet<Note> Notes { get; }
         IDbSet<ApplicationUser> Users { get; }
+
+        IDbSet<HashTag> HashTags { get; } 
+
+        int SaveChanges();
     }
 }

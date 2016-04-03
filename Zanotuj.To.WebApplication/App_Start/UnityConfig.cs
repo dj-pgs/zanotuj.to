@@ -50,7 +50,7 @@ namespace Zanotuj.To.WebApplication.App_Start
 
             container.RegisterType<IUserStore<ApplicationUser>, NoteUserStore>();
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => HttpContext.Current.GetOwinContext().Authentication));
-
+            container.RegisterType<IUserContext, WebUserContext>(new PerRequestLifetimeManager());
 
         }
     }

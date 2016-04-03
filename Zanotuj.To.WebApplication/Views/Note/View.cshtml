@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNet.Identity
+@model Zanotuj.To.WebApplication.Controllers.NoteViewViewModel
+
+@{
+    ViewBag.Title = "Notatka";
+}
+
+@section feature
+{
+    <div class="bg-light">
+        <div class="container">
+            <div class="content">
+                <div class="row clearfix">
+                    <div class="date col-md-9">Data utworzenia: @Model.CreateTime.ToShortDateString() / Ostatnia edycja: @Model.DaysAgo dni temu</div>
+                    <div class="actions col-md-3">
+                        <a href="#"><i class="icon-copy"></i> udostępnij</a>
+                        @if (User.Identity.GetUserName() == Model.Author)
+                        {
+                            <a href="#"><i class="icon-edit"></i> edytuj</a>
+                            <a href="#"><i class="icon-remove"></i> usuń</a>
+                        }
+
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <h3>@Model.Title</h3>
+                    </div>
+
+                </div>
+                <div class="author">
+                    <img class="avatar" src="@Model.PhotoUrl" />@Model.Author
+                </div>
+                <div class="meta">
+                    @(string.Join(", ", Model.HashTags))
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="full-note content col-md-8 col-md-offset-2">
+    @Html.Raw(Model.Content)
+</div>

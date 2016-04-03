@@ -1,5 +1,13 @@
-﻿@{
+﻿@using System.Security.Claims
+@{
     Layout = null;
+    var claimsUser = User.Identity as ClaimsIdentity ?? new ClaimsIdentity();
+    var profilePhotoUrl = Url.Content("~/Assets/avatar.jpg");
+    var profilePhotoClaim = claimsUser.Claims.FirstOrDefault(c => c.Type == "profile:photo:url");
+    if (profilePhotoClaim != null)
+    {
+        profilePhotoUrl = profilePhotoClaim.Value;
+    }
 }
 <!doctype html>
 <html lang="en">
@@ -13,7 +21,7 @@
     <link rel="stylesheet" href="~/Content/styles.css">
 </head>
 
-<body id="@ViewBag.LoginId">
+<body id="@ViewBag.BodyId">
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -25,9 +33,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Request.IsAuthenticated)
                     {
+
                         <li>
-                            <button class="btn btn-primary">Dodaj notatkę</button>
+                            <div>@Html.ActionLink("Dodaj notatkę", "Add", "Note",null , new { @class = "btn btn-primary" })</div>
                         </li>
+                        <li><img src="@profilePhotoUrl" /></li>
                         <li>
                             <a href="@Url.Action("LogOff","Account")"><i class="icon-profile"></i> Wyloguj</a>
                         </li>

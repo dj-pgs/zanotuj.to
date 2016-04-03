@@ -5,11 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using Facebook;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using Newtonsoft.Json;
 using Zanotuj.To.WebApplication.Models;
 using Zanotuj.To.WebApplication.Repository;
 
@@ -90,9 +92,20 @@ namespace Zanotuj.To.WebApplication
 
         public async Task<IdentityResult> AddLoginAsync(string id, ExternalLoginInfo info)
         {
+
             var identityResult = await AddLoginAsync(id, info.Login);
-            var fb = new facebook (access_token);
-            dynamic myInfo = fb.Get("/me/friends");
+            if (identityResult.Succeeded == false)
+            {
+                return identityResult;
+            }
+            if (info.ExternalIdentity.HasClaim(c=>c.Type=="urn:facebook:access_token"))
+            {
+                var fb = new FacebookClient(info.ExternalIdentity.Claims.First(c=>c.Type== "urn:facebook:access_token").Value);
+                var profile = await fb.GetTaskAsync("/me?fields=picture");
+                dynamic myInfo = JsonConvert.DeserializeObject(profile.ToString());
+                var pictureUrl = myInfo.picture.data.url.ToString();
+                identityResult = await AddClaimAsync(id, new Claim("profile:photo:url", pictureUrl));
+            }
             return identityResult;
         }
     }
