@@ -16,9 +16,18 @@ namespace Zanotuj.To.WebApplication.Controllers
             _noteService = noteService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string query=null)
         {
-            var notes = _noteService.GetNotes();
+            List<NoteViewModel> notes;
+            if (query == null)
+            {
+                notes = _noteService.GetNotes();
+            }
+            else
+            {
+                notes = _noteService.GetNotes(query);
+                ViewBag.SearchQuery = query;
+            }
             return View(notes);
         }
 

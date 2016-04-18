@@ -10,12 +10,13 @@
     <script type="text/javascript">
         $(function () {
             tinymce.init({
-                selector: '.editor'
+                selector: '.editor',
+                plugins: "link, code"
             });
         });
     </script>
 }
-<div class="container">
+<div class="main container">
     <div class="col-md-8">
         <h3>Utwórz notatkę</h3>
         @using (Html.BeginForm("Add", "Note", FormMethod.Post))

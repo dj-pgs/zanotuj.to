@@ -226,29 +226,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604011543450_Add note entity.cs" />
-    <Compile Include="Migrations\201604011543450_Add note entity.Designer.cs">
-      <DependentUpon>201604011543450_Add note entity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604021134464_Add Hashtag.cs" />
-    <Compile Include="Migrations\201604021134464_Add Hashtag.Designer.cs">
-      <DependentUpon>201604021134464_Add Hashtag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604021241280_Change relation.cs" />
-    <Compile Include="Migrations\201604021241280_Change relation.Designer.cs">
-      <DependentUpon>201604021241280_Change relation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604022013483_Change user foreign key.cs" />
-    <Compile Include="Migrations\201604022013483_Change user foreign key.Designer.cs">
-      <DependentUpon>201604022013483_Change user foreign key.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604022039160_Change user foreign key v2.cs" />
-    <Compile Include="Migrations\201604022039160_Change user foreign key v2.Designer.cs">
-      <DependentUpon>201604022039160_Change user foreign key v2.cs</DependentUpon>
+    <Compile Include="Migrations\201604040957148_init.cs" />
+    <Compile Include="Migrations\201604040957148_init.Designer.cs">
+      <DependentUpon>201604040957148_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountLoginViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HtmlSanitizer.cs" />
     <Compile Include="Models\NoteAddViewModel.cs" />
     <Compile Include="Repository\ApplicationDbContext.cs" />
     <Compile Include="Repository\ApplicationUser.cs" />
@@ -626,6 +611,8 @@
     <Content Include="Assets\logo.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\note-template.html" />
+    <Content Include="Content\PGS_logo.svg" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -829,6 +816,7 @@
     <Content Include="Assets\fonts\2EDEA8_0_0.ttf" />
     <Content Include="Assets\fonts\2EDEA8_0_0.woff" />
     <Content Include="Assets\fonts\2EDEA8_0_0.woff2" />
+    <None Include="Properties\PublishProfiles\zanotujto.ic-net.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -837,6 +825,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lodash.underscore.js" />
+    <Content Include="Scripts\lodash.underscore.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -875,11 +865,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Views\Account\Login.cshtml" />
-    <None Include="Views\Home\Note.cshtml" />
-    <None Include="Views\Note\Add.cshtml" />
-    <None Include="Views\Note\Edit.cshtml" />
-    <None Include="Views\Note\View.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Note.cshtml" />
+    <Content Include="Views\Note\Add.cshtml" />
+    <Content Include="Views\Note\Edit.cshtml" />
+    <Content Include="Views\Note\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -894,20 +884,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604011543450_Add note entity.resx">
-      <DependentUpon>201604011543450_Add note entity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604021134464_Add Hashtag.resx">
-      <DependentUpon>201604021134464_Add Hashtag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604021241280_Change relation.resx">
-      <DependentUpon>201604021241280_Change relation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604022013483_Change user foreign key.resx">
-      <DependentUpon>201604022013483_Change user foreign key.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604022039160_Change user foreign key v2.resx">
-      <DependentUpon>201604022039160_Change user foreign key v2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604040957148_init.resx">
+      <DependentUpon>201604040957148_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

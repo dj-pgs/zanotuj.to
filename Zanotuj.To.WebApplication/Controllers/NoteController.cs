@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Html.Helpers;
 using Zanotuj.To.WebApplication.Models;
 using Zanotuj.To.WebApplication.Services;
 
@@ -18,6 +19,7 @@ namespace Zanotuj.To.WebApplication.Controllers
         }
 
         // GET: Note
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return RedirectToAction("Index", "home");
@@ -36,22 +38,34 @@ namespace Zanotuj.To.WebApplication.Controllers
             {
                 return View(model);
             }
-           var result = _noteService.CreateNote(model);
-            return View(new NoteAddViewModel());
+            model.Content = HtmlSanitizer.sanitize(model.Content);
+            var result = _noteService.GetNotes(model);
+            return RedirectToAction("View", new { id = result.Data });
         }
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = _noteService.GetNoteForEditViewModel(id);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(NoteEditViewmodel note)
+        public ActionResult Edit(NoteEditViewModel note, int id)
         {
-            return View();
+            note.Content = HtmlSanitizer.sanitize(note.Content);
+            if (!ModelState.IsValid)
+            {
+                return View(note);
+            }
+            var model = _noteService.EditNote(note, id);
+            if (model.IsSuccess)
+            {
+                return RedirectToAction("View", new {id = id});
+            }
+            return View(note);
         }
-
+        [AllowAnonymous]
         public ActionResult View(int id)
         {
             NoteViewViewModel note = _noteService.GetNoteForView(id);
@@ -62,6 +76,7 @@ namespace Zanotuj.To.WebApplication.Controllers
 
     public class NoteViewViewModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string PhotoUrl { get; set; }
@@ -69,15 +84,5 @@ namespace Zanotuj.To.WebApplication.Controllers
         public IEnumerable<string> HashTags { get; set; }
         public DateTime CreateTime { get; set; }
         public int DaysAgo { get; set; }
-    }
-
-    public class NoteEditViewmodel
-    {
-        public string Title { get; set; }
-
-        public string Content { get; set; }
-
-        public string HashTags { get; set; }
-
     }
 }

@@ -1,0 +1,14 @@
+﻿<div class="note">
+    <div class="date">{{ createDate }}</div>
+    <h1>
+        <a href="{{ note-url }}">{{ note-title }}</a>
+    </h1>
+    <div class="content">{{ note-content }}</div>
+    <div class="author">
+        <img class="avatar" src="{{ note-photo-url }}" />{{ note-author}}
+    </div>
+    <div class="meta">
+        <div class="hashtag">#</div>
+        {{ note-hastags }}
+    </div>
+</div>

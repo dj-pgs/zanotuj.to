@@ -4,6 +4,15 @@
 @{
     ViewBag.Title = "Notatka";
 }
+@functions{
+    public string TokenHeaderValue()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+
 
 @section feature
 {
@@ -13,11 +22,11 @@
                 <div class="row clearfix">
                     <div class="date col-md-9">Data utworzenia: @Model.CreateTime.ToShortDateString() / Ostatnia edycja: @Model.DaysAgo dni temu</div>
                     <div class="actions col-md-3">
-                        <a href="#"><i class="icon-copy"></i> udostępnij</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=@Request.Url" target="_blank"><i class="icon-copy"></i> udostępnij</a>
                         @if (User.Identity.GetUserName() == Model.Author)
                         {
-                            <a href="#"><i class="icon-edit"></i> edytuj</a>
-                            <a href="#"><i class="icon-remove"></i> usuń</a>
+                            <a href="@Url.Action("Edit", new { id = Model.Id })"><i class="icon-edit"></i> edytuj</a>
+                            <a href="#" id="delete-link"><i class="icon-remove"></i> usuń</a>
                         }
 
                     </div>
@@ -38,6 +47,33 @@
         </div>
     </div>
 }
-<div class="full-note content col-md-8 col-md-offset-2">
-    @Html.Raw(Model.Content)
+<div class="main container">
+    <div class="full-note content col-md-8 col-md-offset-2" style="padding: 20px;">
+        @Html.Raw(Model.Content)
+    </div>
 </div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(function() {
+            $("#delete-link").click(function() {
+                var isConfirmed = confirm("Usuwasz notatkę. Jesteś pewien?");
+                if (isConfirmed) {
+                      $.ajax("/api/Note", {
+                        type: "POST",
+                        contentType: "application/json",
+                        data:  { id: @Model.Id }, 
+                        dataType: "json",
+                        headers: {
+                            'RequestVerificationToken': '@TokenHeaderValue()'
+                        }
+                    }).success(function() {
+                          window.location.href = '/';
+                      });
+                }
+            });
+        })
+    </script>
+}

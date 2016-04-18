@@ -3,24 +3,36 @@ namespace Zanotuj.To.WebApplication.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Addnoteentity : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.HashTags",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 128),
+                        CreateTime = c.DateTime(nullable: false),
+                        UpdateTime = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true, name: "IX_HashTagName");
+            
             CreateTable(
                 "dbo.Notes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         NoteContent = c.String(),
-                        UserId = c.Int(nullable: false),
+                        Title = c.String(),
+                        ApplicationUserId = c.String(maxLength: 128),
                         CreateTime = c.DateTime(nullable: false),
                         UpdateTime = c.DateTime(nullable: false),
-                        User_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
-                .Index(t => t.User_Id);
+                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUserId)
+                .Index(t => t.ApplicationUserId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -90,28 +102,48 @@ namespace Zanotuj.To.WebApplication.Migrations
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
             
+            CreateTable(
+                "dbo.NoteHashTags",
+                c => new
+                    {
+                        Note_Id = c.Int(nullable: false),
+                        HashTag_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Note_Id, t.HashTag_Id })
+                .ForeignKey("dbo.Notes", t => t.Note_Id, cascadeDelete: true)
+                .ForeignKey("dbo.HashTags", t => t.HashTag_Id, cascadeDelete: true)
+                .Index(t => t.Note_Id)
+                .Index(t => t.HashTag_Id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Notes", "User_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Notes", "ApplicationUserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.NoteHashTags", "HashTag_Id", "dbo.HashTags");
+            DropForeignKey("dbo.NoteHashTags", "Note_Id", "dbo.Notes");
+            DropIndex("dbo.NoteHashTags", new[] { "HashTag_Id" });
+            DropIndex("dbo.NoteHashTags", new[] { "Note_Id" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Notes", new[] { "User_Id" });
+            DropIndex("dbo.Notes", new[] { "ApplicationUserId" });
+            DropIndex("dbo.HashTags", "IX_HashTagName");
+            DropTable("dbo.NoteHashTags");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.Notes");
+            DropTable("dbo.HashTags");
         }
     }
 }

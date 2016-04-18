@@ -7,13 +7,13 @@ namespace Zanotuj.To.WebApplication.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Changerelation : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Changerelation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604021241280_Change relation"; }
+            get { return "201604040957148_init"; }
         }
         
         string IMigrationMetadata.Source

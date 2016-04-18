@@ -1,4 +1,5 @@
-﻿@model List<Zanotuj.To.WebApplication.Services.NoteViewModel>
+﻿@using Html.Helpers
+@model List<Zanotuj.To.WebApplication.Services.NoteViewModel>
 
 @section feature
    {
@@ -9,31 +10,170 @@
                 <h3>Zanotuj.to jest największą bazą notatek, którą przeszukasz w intuicyjny sposób, łatwo powiększysz o kolejne i udostępnisz innym.</h3>
                 <form>
                     <div class="selectize form-group form-inline">
-                        <input placeholder="Podaj frazę albo #hasztag lub &#64;" />
+                        <input placeholder="Podaj frazę albo #hasztag lub &#64;" id="search-input" value="@ViewBag.SearchQuery" />
                     </div>
                 </form>
             </div>
         </div>
     </div>
 }
-<div class="container">
-    @foreach (var note in Model)
+<div class="progress hidden" id="spinner">
+    <div class="progress-bar progress-bar-striped active" role="progressbar"
+         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        100%
+    </div>
+</div>
+<div class="main container" id="note-container" style="margin-top: 10px">
+
+    @{
+        var clearStyle = "clear: left";
+    }
+    @for (int index = 0; index < Model.Count; index++)
     {
-        <div class="note">
-            <div class="date">@note.CreateTime.ToShortDateString()</div>
-            <h1><a href="@Url.Action("View", "Note", new { Id = note.Id })">@note.Title</a></h1>
-            <div class="content">@Html.Raw(note.Content)</div>
-            <div class="author">
-                <img class="avatar" src="@note.PhotoUrl" />@note.Autor
-            </div>
-            <div class="meta">
-                <div class="hashtag">#</div>
-                @foreach (var hashtag in note.HashTags)
-                {
-                    @hashtag @:, &nbsp;
-                }
+        var note = Model[index];
+        var addStyle = index % 4 == 0 ? clearStyle : "";
+        <div class="note col-md-3" style="@addStyle">
+            <div class="thumbnail" style="">
+                <div class="date">@note.CreateTime.ToShortDateString()</div>
+                <h1>
+                    <a href="@Url.Action("View", "Note", new {Id = note.Id})">@note.Title</a>
+                </h1>
+                <div class="content">@Html.Raw(HtmlSanitizer.sanitize(note.Content))</div>
+
+                <a href="@Url.Action("Index", new {query = "@" + @note.Autor})" class="author"><img class="avatar" src="@note.PhotoUrl" />@note.Autor</a>
+
+                <div class="meta">
+                    <div class="hashtag">#</div>
+                    @{
+                        var hasTags = new List<string>();
+                        foreach (var hashtag in note.HashTags)
+                        {
+                            hasTags.Add(@Html.ActionLink(hashtag, "Index", new { query = "#" + hashtag }).ToString());
+
+                        }
+                        var hashTagsToShow = string.Join(", ", hasTags);
+                    }
+
+                    @Html.Raw(hashTagsToShow)
+                </div>
             </div>
         </div>
-    }
 
+                        }
 </div>
+
+
+
+@section scripts
+{
+
+    <script type="text/javascript">
+
+        $(function () {
+            var page = 1;
+            var stopLoad = false;
+            var $searchInput = $("#search-input");
+            _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+            var hashUrl = _.template(decodeURI('@Html.ActionLink("{{ hashTag }}", "Index",new {query="{{ hashTagUrl }}"})'));
+            var template = _.template('<div class="note  col-md-3" style="{{ clearStyle }}"><div class="thumbnail" style=""><div class="date">{{ createDate }}</div><h1><a href="{{ noteUrl }}">{{ noteTitle }}</a></h1><div class="content">{{ noteContent }}</div><div class="author"><img class="avatar" src="{{ notePhotoUrl }}" />{{ noteAuthor}}</div><div class="meta"><div class="hashtag">#</div>{{ noteHastags }}</div></div></div>');
+
+            function search() {
+                console.log($searchInput.val());
+                var items = $searchInput.val().split(",");
+                var searchDto = {
+                    hashTags: [],
+                    authors: [],
+                    phrase: [],
+                    page: page,
+                    pageSize: 30
+                }
+
+                _.each(items, function (item) {
+                    if (!item || item.length === 0)
+                        return;
+                    var firstChar = item[0];
+                    var phrase = item.substring(1);
+                    if (!phrase || item.length < 4) {
+                        return;
+                    }
+
+                    switch (firstChar) {
+                        case "#":
+                            searchDto.hashTags.push(phrase);
+                            break;
+                        case "@@":
+                            searchDto.authors.push(phrase);
+                            break;
+                        default:
+                            searchDto.phrase.push(item);
+                            break;
+                    }
+
+                });
+
+                $("#spinner").removeClass("hidden");
+                $.getJSON('/api/note', searchDto, function (data) {
+                    if (!data || data.length === 0) {
+                        page = 1;
+                        stopLoad = true;
+                        return;
+                    }
+                    var $noteConatiner = $("#note-container");
+                    _.each(data, function (note, index) {
+
+                        var addStyle = index % 4 === 0 ? "clear: left" : "";
+                        _.each(note.HashTags, function (item, index) {
+                            note.HashTags[index] = hashUrl({ hashTag: item, hashTagUrl: "%23" + item });
+                        });
+                        var model = {
+                            createDate: note.CreateTime,
+                            noteUrl: "/note/view/" + note.Id,
+                            noteTitle: note.Title,
+                            noteContent: note.Content,
+                            notePhotoUrl: note.PhotoUrl,
+                            noteAuthor: note.Autor,
+                            noteHastags: note.HashTags.join(', '),
+                            clearStyle: addStyle
+
+                        }
+
+                        var html = template(model);
+                        $noteConatiner.append(html);
+                    });
+
+
+                }).always(function () { $("#spinner").addClass("hidden"); });
+            }
+
+            var debouncedSearch = _.debounce(search, 300);
+
+
+            $searchInput.change(function () {
+                if (debouncedSearch.cancel) {
+                    debouncedSearch.cancel();
+                }
+                debouncedSearch();
+                $("#note-container").html("");
+                page = 1;
+                stopLoad = false;
+            });
+
+
+
+            var win = $(window);
+
+
+            // Each time the user scrolls
+            win.scroll(function () {
+                // End of the document reached?
+                if ($(document).height() - win.height() == win.scrollTop()) {
+                    if (stopLoad)
+                        return;
+                    $("#spinner").removeClass("hidden");
+                    ++page;
+                    search();
+                }
+            });
+        })
+    </script>
+}
