@@ -1,0 +1,44 @@
+.table > thead > tr > th {
+	color: $orange;
+	text-transform: uppercase;
+	font-weight: normal;
+	border-bottom: 1px solid $gray-lighter;
+	font-size: 14px;
+}
+.table > tbody > tr {
+	& > th, & > td {
+		border-bottom: 1px solid $gray-lighter;
+		font-weight: normal;
+		vertical-align: middle;
+	}
+}
+.sort {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-left: 30px;
+	.arrow {
+		display: block;
+		&.down {
+			margin-top: 2px;
+		}
+	}
+}
+
+.arrow {
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	cursor: pointer;
+	&.up {
+		border-bottom-color: $gray-light;
+		&.active, &:hover {
+			border-bottom-color: $orange;
+		}
+	}
+	&.down {
+		border-top-color: $gray-light;
+		&.active, &:hover {
+			border-top-color: $orange;
+		}
+	}
+}

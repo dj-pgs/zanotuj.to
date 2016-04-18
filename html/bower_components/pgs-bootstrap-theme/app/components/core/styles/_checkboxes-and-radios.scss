@@ -1,0 +1,174 @@
+//Based on github.com/flatlogic/awesome-bootstrap-checkbox
+
+//
+// Checkboxes
+// --------------------------------------------------
+
+.checkbox {
+  padding-left: 20px;
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+
+      margin-left: -20px;
+      border: 1px solid $input-border;
+      border-radius: $border-radius-small;
+      background-color: #fff;
+      color: $orange;
+      @include transition(border 0.15s ease-in-out, color 0.15s ease-in-out);
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 3px;
+      font-size: 11px;
+      color: $orange;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    &:checked + label {
+      @extend .icon-check;
+
+
+      &:before {
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        vertical-align: text-top;
+      }
+    }
+
+    &:checked + label::before {
+      border-color: $orange;
+
+    }
+
+    &:disabled + label {
+
+      &::before {
+        background-color: $input-bg-disabled;
+        cursor: not-allowed;
+        border-color: $gray-light;
+        color: $gray-light;
+
+      }
+
+      &::after {
+        color: $gray-light;
+
+      }
+    }
+
+  }
+
+  &.checkbox-inline {
+    margin-top: 0;
+  }
+}
+
+// Radios
+// --------------------------------------------------
+
+.radio {
+  padding-left: 20px;
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+
+    &::before {
+
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid $input-border;
+      border-radius: 50%;
+      background-color: #fff;
+      @include transition(border 0.15s ease-in-out);
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: " ";
+      width: 9px;
+      height: 9px;
+      left: 4px;
+      top: 4px;
+      margin-left: -20px;
+      border-radius: 50%;
+      background-color: $orange;
+      @include scale(0, 0);
+      @include transition-transform(.1s cubic-bezier(.8, -0.33, .2, 1.33));
+      //curve - http://cubic-bezier.com/#.8,-0.33,.2,1.33
+
+    }
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    &:checked + label::after {
+      @include scale(1, 1);
+    }
+
+    &:checked + label::before {
+      border-color: $orange;
+    }
+
+    &:disabled + label {
+      opacity: 0.8;
+
+      &::before {
+        cursor: not-allowed;
+        border-color: $gray-light;
+        background: $gray-lighter;
+      }
+
+      &::after {
+        cursor: not-allowed;
+        background-color: $gray-light;
+      }
+    }
+
+  }
+
+  &.radio-inline {
+    margin-top: 0;
+  }
+}

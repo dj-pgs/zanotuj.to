@@ -1,0 +1,12 @@
+.breadcrumb {
+	background-color: transparent;
+	a {
+		color: black;
+	}
+	& li {
+		color: $gray-light;
+	}
+	& > li + li:before {
+		color: $orange;
+	}
+}

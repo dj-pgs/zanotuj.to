@@ -1,0 +1,19 @@
+.input-group.search {
+	input.form-control, .btn.btn-default {
+		height: 60px;
+	}
+	input.form-control {
+		@include border-left-radius(30px);
+		padding-right: 30px;
+	}
+	.btn.btn-default { 
+		@include border-left-radius(30px);	
+		@include border-right-radius(30px);
+		margin-left: -30px;
+		z-index: 3;
+		color: $orange;
+		&:focus {
+			outline: none;
+		}
+	}
+}

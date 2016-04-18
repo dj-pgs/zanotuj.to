@@ -1,0 +1,27 @@
+{
+  "name": "pgs-bootstrap-theme",
+  "description": "Basic PGS Bootstrap Template",
+  "main": "",
+  "authors": [
+    "PGS Front"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "PGS",
+    "Bootstrap",
+    "PGS Theme"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "selectize": "~0.12.1"
+  }
+}

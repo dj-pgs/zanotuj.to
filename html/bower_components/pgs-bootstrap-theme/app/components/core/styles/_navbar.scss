@@ -1,0 +1,98 @@
+//Main navigation usingn bootstrap .navbar.navbar-default plus some fixes
+.navbar-default {
+  vertical-align: middle;
+  font-size: 0.95em;
+  .navbar-brand {
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: inherit;
+    padding: 0 15px;
+    white-space: nowrap;
+    > img {
+      display: inline-block;
+    }
+  }
+  h1.navbar-brand {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 74px;
+  }
+  .navbar-nav {
+    @media (min-width: $screen-sm-min) {
+      display: table;
+    }
+    .navbar-dropdown {
+      a[role="button"] {
+        text-transform: capitalize;
+      }
+      img {
+        margin-right: 16px;
+      }
+    }
+    > .open {
+      > a, > a:hover, > a:focus {
+        background-color: #f7f7f7;
+        color: black;
+      }
+    }
+    > li {
+      > a {
+        font-weight: 600;
+        text-transform: uppercase;
+        @media (min-width: $screen-sm-min) {
+          display: table-cell;
+          height: $navbar-height;
+          vertical-align: middle;
+          padding: 0 18px;
+          margin: 0;
+        }
+      }
+      > span {
+        @media (min-width: $screen-sm-min) {
+          display: table-cell;
+          height: $navbar-height;
+          vertical-align: middle;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .navbar-separator {
+    padding: 0 20px;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      background-color: #eee;
+      height: 24px;
+      width: 1px;
+    }
+  }
+  //special class for dropdown inside navbar
+  .navbar-dropdown {
+    li:last-child {
+      a {
+        text-transform: capitalize;
+        &.dropdown-toggle img {
+          margin-right: 15px;
+        }
+      }
+    }
+    .dropdown-toggle .icon {
+      float: none;
+    }
+    .dropdown-menu {
+      background-color: #f7f7f7;
+      border: none;
+      li > a {
+        color: inherit;
+        &:hover,
+        &:focus {
+          background: none;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

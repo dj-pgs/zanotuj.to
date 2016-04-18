@@ -1,0 +1,1429 @@
+<!doctype html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PGS </title>
+    <!-- @if target='dev' -->
+    <!-- build:js -->
+    <!-- @endif -->
+    <!-- @if target='dist' -->
+    <!-- build:js scripts.js -->
+    <!-- @endif -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="components/**/*.js"></script>
+    <script type="text/javascript" src="bower_components/selectize/dist/js/standalone/selectize.js"></script>
+    <!-- endbuild -->
+    <!-- @if target='dev' -->
+    <!-- build:css -->
+    <!-- @endif -->
+    <!-- @if target='dist' -->
+    <!-- build:css styles.css -->
+    <!-- @endif -->
+    <link rel="stylesheet" href="app.css" />
+    <!-- <link rel="stylesheet" href="assets/fontello/css/fontello-codes.css" />
+    <link rel="stylesheet" href="assets/fontello/css/animation.css" /> -->
+    <!-- endbuild -->
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand"><img src="assets/images/PGS_logo.svg" width="80" height="44" alt="PGS"></h1>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown navbar-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Elements<i class="icon icon-down-open"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#navbars">Navbars</a></li>
+                            <li><a href="#typo">Typo</a></li>
+                            <li><a href="#colors">Colors</a></li>
+                            <li><a href="#buttons">Buttons</a></li>
+                            <li><a href="#links">Links</a></li>
+                            <li><a href="#elements">Elements</a></li>
+                            <li><a href="#popups">Popups</a></li>
+                            <li><a href="#pagination">Pagination</a></li>
+                            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+                            <li><a href="#loader">Loader</a></li>
+                            <li><a href="#counter">Counter</a></li>
+                            <li><a href="#list">List</a></li>
+                            <li><a href="#upload">Upload</a></li>
+                            <li><a href="#icons">Icons</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#navbars">Go to the top</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container" id="navbars">
+        <h3>Navbars</h3>
+        <hr>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1 class="navbar-brand"><img src="assets/images/PGS_logo.svg" width="80"
+                                                       height="44" alt="" />
+                    <span class="navbar-separator"></span>Biblioteka
+                </h1>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#pagination">Link</a></li>
+                        <li><span class="navbar-separator"></span></li>
+                        <li class="dropdown navbar-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="img-circle" src="assets/images/samplr_user.jpg" alt="">Anna<span class="icon icon-down-open"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div id="typo" class="row">
+            <h2>Typo</h2>
+            <hr/>
+            <div class="col-md-6 text-color">
+                <h1>Heading 1 (h1)</h1>
+                <h2>Heading 2 (h2)</h2>
+                <h3>Heading 3 (h3)</h3>
+                <h4>Heading 4 (h4)</h4>
+                <p class="small">Small text (.small)</p>
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. (normal text)</p>
+                <p class="large">Large text (.large)</p>
+                <p>use .text-color for orange color</p>
+                <label>Label text</label>
+            </div>
+            <div class="col-md-6">
+                <h1>Heading 1 (h1)</h1>
+                <h2>Heading 2 (h2)</h2>
+                <h3>Heading 3 (h3)</h3>
+                <h4>Heading 4 (h4)</h4>
+                <p class="small">Small text (.small)</p>
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. (normal text)</p>
+                <p class="large">Large text (.large)</p>
+                <label>Label text</label>
+            </div>
+        </div>
+        <div id="colors" class="row">
+            <div class="col-sm-12">
+                <h2>Colors</h2>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label>#ff7726</label>
+                        <p>rgb(255, 119, 38)</p>
+                        <div class="color-box orange"></div>
+                        <label>orange</label>
+                        <p>call to action</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#d9621b</label>
+                        <p>rgb(217, 98, 27)</p>
+                        <div class="color-box orange-dark"></div>
+                        <label>dark orange</label>
+                        <p>hover call to action</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#000</label>
+                        <p>rgb(0, 0, 0)</p>
+                        <div class="color-box black"></div>
+                        <label>czarny</label>
+                        <p>normal text, header</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#a8a8a8</label>
+                        <p class="small">rgb(168, 168, 168)</p>
+                        <div class="color-box gray"></div>
+                        <label>gray</label>
+                        <p>inactive button</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#d9d9d9</label>
+                        <p>rgb(217, 217, 217)</p>
+                        <div class="color-box gray-light"></div>
+                        <label>light gray</label>
+                        <p>alerts frame, placeholder</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#f0f0f0</label>
+                        <p>rgb(240, 240, 240)</p>
+                        <div class="color-box gray-lighter"></div>
+                        <label>lighter gray</label>
+                        <p>alerts fulfillment, background</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#00a561</label>
+                        <p>rgb(0, 165, 97)</p>
+                        <div class="color-box green"></div>
+                        <label>green</label>
+                        <p>alert</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#ff0000</label>
+                        <p>rgb(255, 0, 0)</p>
+                        <div class="color-box red"></div>
+                        <label>red</label>
+                        <p>alert, validation</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>#fff0f0</label>
+                        <p>rgb(255, 240, 240)</p>
+                        <div class="color-box red-light"></div>
+                        <label>light red</label>
+                        <p>alert, validation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons" class="row">
+            <div class="col-sm-12">
+                <h2>Buttons</h2>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third">Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs" disabled>Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first" disabled>Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first" disabled>Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs" disabled>Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second" disabled>Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second" disabled>Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third" disabled>Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row bg-color">
+                    <div class="col-sm-12">
+                        <h4>Orange bg - just add .bg-color class to container (eg .row)</h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third">Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs" disabled="">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first" disabled="">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first" disabled="">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs" disabled="">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second" disabled="">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second" disabled="">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third" disabled="">Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row bg-dark">
+                    <div class="col-sm-12">
+                        <h4>Black bg - just add .bg-dark class to container (eg .row)</h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third">Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <button class="btn btn-first btn-xs" disabled="">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-first" disabled="">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-first" disabled="">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second btn-xs" disabled="">Mały przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-second" disabled="">Normalny przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-lg btn-second" disabled="">Duży przycisk</button>
+                        </p>
+                        <p>
+                            <button class="btn btn-third" disabled="">Trzeciego stopnia</button>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <h5>
+                Button margins</h5>
+                <p>Left aligned - no left margin</p>
+                <p>
+                    <button class="btn btn-first">Normalny przycisk</button>
+                    <button class="btn btn-first">Normalny przycisk
+                    </button>aaaa</p>
+                <p>Right aligned - no left right</p>
+                <p class="text-right">aaa
+                    <button class="btn btn-first">Normalny przycisk</button>
+                    <button class="btn btn-first">Normalny przycisk
+                    </button>
+                </p>
+                <p class="text-right">aaa
+                    <button class="btn btn-first pull-right">Normalny przycisk</button>
+                    <button class="btn btn-first pull-right">Normalny przycisk
+                    </button>aaaa</p>
+            </div>
+        </div>
+        <div id="links" class="row">
+            <div class="col-sm-12">
+                <h2>Links</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do <a>eiusmod tempor incididunt </a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="elements" class="row">
+            <div class="col-sm-12">
+                <h2>Elements</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <fieldset id="checkbox">
+                                <legend>
+                                    Checkbox
+                                </legend>
+                                <div class="checkbox">
+                                    <input id="checkbox1" type="checkbox">
+                                    <label for="checkbox1">
+                                        Default
+                                    </label>
+                                </div>
+                                <p class="text-semibold">Inline checkboxes</p>
+                                <div class=form-group>
+                                    <div class="checkbox checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label for="inlineCheckbox1"> Inline One </label>
+                                    </div>
+                                    <div class="checkbox checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox2" value="option1" checked="">
+                                        <label for="inlineCheckbox2"> Inline Two </label>
+                                    </div>
+                                    <div class="checkbox checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox3" value="option1">
+                                        <label for="inlineCheckbox3"> Inline Three </label>
+                                    </div>
+                                </div>
+                                <p class="text-semibold">
+                                    Disabled
+                                </p>
+                                <div class="checkbox">
+                                    <input id="checkbox9" type="checkbox" disabled="">
+                                    <label for="checkbox9">
+                                        Can't check this
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="checkbox10" type="checkbox" disabled="" checked="">
+                                    <label for="checkbox10">
+                                        This too
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-offset-2 col-md-5">
+                            <fieldset id="radios">
+                                <legend>
+                                    Radios
+                                </legend>
+                                <p>
+                                </p>
+                                <div class="radio">
+                                    <input type="radio" name="radio1" id="radio1" value="option1" checked="">
+                                    <label for="radio1">
+                                        Option 1
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="radio1" id="radio2" value="option2">
+                                    <label for="radio2">
+                                        Option 2
+                                    </label>
+                                </div>
+                                <p class="text-semibold">Inline radios</p>
+                                <div class="form-group">
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                        <label for="inlineRadio1"> Inline One </label>
+                                    </div>
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                        <label for="inlineRadio2"> Inline Two </label>
+                                    </div>
+                                </div>
+                                <p class="text-semibold">
+                                    Disabled
+                                </p>
+                                <div class="radio">
+                                    <input type="radio" name="radio3" id="radio5" value="option1" disabled="">
+                                    <label for="radio5">
+                                        Next
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="radio3" id="radio6" value="option2" checked="" disabled="">
+                                    <label for="radio6">
+                                        One
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <fieldset id="inputs">
+                        <legend>
+                            Inputs
+                        </legend>
+                        <div class="form-group form-inline">
+                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="password" class="form-control" placeholder="Password" disabled>
+                            <input type="number" class="form-control" placeholder="number">
+                            <select  class="form-control" >
+                                <option>1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset id="dropdowns">
+                        <legend>
+                            Dropdowns
+                        </legend>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p>Inline dropdown</p>
+                                <div class="dropdown">
+                                    <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Dropdown
+                                        <span class="icon icon-dropdown text-color"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>Bloxk dropdown</p>
+                                <div class="dropdown">
+                                    <button class="btn btn-block btn-dropdown dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Dropdown
+                                        <span class="icon icon-dropdown text-color"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="selectize">
+                        <legend>
+                            Selectize
+                        </legend>
+                        <div class="selectize form-group form-inline">
+                            <div class="col-md-6">
+                                <input placeholder="Wprowadź tekst..." />
+                            </div>
+                            <div class="col-md-6">
+                                <input placeholder="Wprowadź tekst..." />
+                            </div>
+                            <div class="col-md-6 text-color">
+                                <label for="selectize1">LABELKA</label>
+                                <input id="selectize1" placeholder="Wprowadź tekst..." />
+                            </div>
+                            <div class="col-md-6 text-color">
+                                <label for="selectize2">LABELKA</label>
+                                <input id="selectize2" placeholder="Wprowadź tekst..." />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <fieldset class="form-horizontal" id="input-errors">
+                        <div class="form-group has-error">
+                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group has-error">
+                            <label for="inputEmail1" class="control-label">Email</label>
+                            <input type="text" class="form-control" id="inputEmail1" placeholder="Email">
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="alerts">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default" id="alertsPanel">
+                            <div class="panel-heading">Alerts</div>
+                            <div class="panel-body">
+                                <div>
+                                    <div class="alert alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon icon-close"></i></button>
+                                        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                                    </div>
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon icon-close"></i></button>
+                                        <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this
+                                    important alert message</a>.
+                                    </div>
+                                    <div class="alert alert-warning">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon icon-close"></i></button>
+                                        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your
+                                    attention</a>, but it's not super important.
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon icon-close"></i></button>
+                                        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your
+                                    attention</a>, but it's not super important.
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon icon-close"></i></button>
+                                        <h4>Warning!</h4>
+                                        <p>This is a block style alert.</p>
+                                    </div>
+                                    <div class="well">
+                                        This is bootstrap .well class block.
+                                    </div>
+                                    <div class="well well-sm">
+                                        This is bootstrap .well.well-sm class block.
+                                    </div>
+                                    <div class="well well-lg">
+                                        This is bootstrap .well.well-lg class block.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="popups">
+                        <h3>Popups</h3>
+                        <span data-toggle="tooltip" data-placement="right" title="Tooltip on right"><i
+                            class="icon icon-dropdown"></i></span>
+                        <span data-toggle="tooltip" data-placement="left" title="Tooltip on left"><i
+                            class="icon icon-dropdown"></i></span>
+                        <span data-toggle="tooltip" data-placement="top" title="Tooltip on top"><i
+                            class="icon icon-dropdown"></i></span>
+                        <span data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"><i
+                            class="icon icon-dropdown"></i></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="pagination">
+                        <h3>Pagination</h3>
+                        <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">Poprzednia</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">2</a></li>
+                                <li class="disabled"><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li class="active"><a href="#">5</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">500</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">Następna</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="breadcrumbs">
+                        <h3>Breadcrumbs</h3>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Library</a></li>
+                            <li class="active">Data</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="loader">
+                        <h3>Loader</h3>
+                        <div class="well">
+                            <i class="icon icon-loader "></i> <span>Loading...</span>
+                            <i class="icon icon-loader animate-spin"></i> <span>Loading...</span>
+                        </div>
+                        <div class="well">
+                            <i class="icon icon-loader lg"></i> <span>Loading...</span>
+                            <i class="icon icon-loader animate-spin lg"></i> <span>Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="counter">
+                        <h3>Counter</h3>
+                        <div class="col-sm-6 textarea-with-counter">
+                            <div class="counter">100/200</div>
+                            <textarea class="form-control" id="textarea-with-counter" rows="6"></textarea>
+                        </div>
+                        <div class="col-sm-6 textarea-with-counter">
+                            <div class="counter">100/200</div>
+                            <textarea class="form-control" id="textarea-with-counter1" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="list">
+                        <h3>List</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Title
+                                        <div class="sort"><i class="arrow up"></i><i class="arrow down"></i></div>
+                                    </th>
+                                    <th>Author</th>
+                                    <th>Localisation</th>
+                                    <th>Availability</th>
+                                    <th>Return date
+                                        <div class="sort"><i class="arrow up"></i><i class="arrow down active"></i></div>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <button class="btn btn-first btn-xs">Normalny przycisk</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <button class="btn btn-second btn-xs">Normalny przycisk</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <button class="btn btn-first btn-xs">Normalny przycisk</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="upload">
+                        <h3>Upload sample</h3>
+                        <div class="upload col-sm-4">
+                            <div class="placeToDrag">
+                                <span>Przeciągnij i upuść plik</span>
+                                <span>albo</span>
+                                <a href="#"><i class="icon icon-add"></i> dodaj plik</a>
+                            </div>
+                            <div class="preview">
+                                <i class="icon icon-add"></i>
+                                <label>cover preview</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="icons">
+                        <h3>Icons</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Aktualnie kwestia doboru zestawu ikon jest otwarta. <br/>
+                                Sugerowany zestaw bazowych ikon: <a href="https://materialdesignicons.com/ ">https://materialdesignicons.com/ </a>-
+                                instalacja przez npm lub bowera<br/>
+
+                                Zestaw proponowany przez grafików: <a href="//www.webalys.com/nova/free-icons.html">http://www.webalys.com/nova/free-icons.html</a>
+                            </h5>
+                            </div>
+                            <div class="col-sm-12">
+                                <hr/>
+                                <p>Ikony w projekcie</p>
+                                <i class="icon icon-down-open"></i> icon-down-open
+                                <br/>
+                                <i class="icon icon-alert"></i> icon-alert
+                                <br/>
+                                <i class="icon icon-bookmark"></i> icon-bookmark
+                                <br/>
+                                <i class="icon icon-bug"></i> icon-bug
+                                <br/>
+                                <i class="icon icon-calendar"></i> icon-calendar
+                                <br/>
+                                <i class="icon icon-cash"></i> icon-cash
+                                <br/>
+                                <i class="icon icon-checkbox"></i> icon-checkbox
+                                <br/>
+                                <i class="icon icon-close"></i> icon-close
+                                <br/>
+                                <i class="icon icon-close_"></i> icon-close_
+                                <br/>
+                                <i class="icon icon-code"></i> icon-code
+                                <br/>
+                                <i class="icon icon-copy"></i> icon-copy
+                                <br/>
+                                <i class="icon icon-dropdown"></i> icon-dropdown
+                                <br/>
+                                <i class="icon icon-edit"></i> icon-edit
+                                <br/>
+                                <i class="icon icon-flag"></i> icon-flag
+                                <br/>
+                                <i class="icon icon-info"></i> icon-info
+                                <br/>
+                                <i class="icon icon-loader"></i> icon-loader
+                                <br/>
+                                <i class="icon icon-lock"></i> icon-lock
+                                <br/>
+                                <i class="icon icon-mail"></i> icon-mail
+                                <br/>
+                                <i class="icon icon-map_marker"></i> icon-map_marker
+                                <br/>
+                                <i class="icon icon-one_to_one"></i> icon-one_to_one
+                                <br/>
+                                <i class="icon icon-phone"></i> icon-phone
+                                <br/>
+                                <i class="icon icon-profile"></i> icon-profile
+                                <br/>
+                                <i class="icon icon-remove"></i> icon-remove
+                                <br/>
+                                <i class="icon icon-reports"></i> icon-reports
+                                <br/>
+                                <i class="icon icon-search"></i> icon-search
+                                <br/>
+                                <i class="icon icon-settings"></i> icon-settings
+                                <br/>
+                                <i class="icon icon-star"></i> icon-star
+                                <br/>
+                                <i class="icon icon-structure"></i> icon-structure
+                                <br/>
+                                <i class="icon icon-time"></i> icon-time
+                                <br/>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Datepicker</h3>
+                        <p>Styles for AngularStrap Datepicker and timepicker</p>
+                    </div>
+                    <div class="datepicker-container col-sm-4">
+                        <div class="dropdown-menu datepicker ng-scope bottom-left am-fade datepicker-mode-0" ng-class="'datepicker-mode-' + $mode" style="max-width: 320px; top: 34px; left: 0px; display: block; visibility: visible;">
+                            <table style="table-layout: fixed; height: 100%; width: 100%">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$selectPane(-1)"><i class="glyphicon glyphicon-chevron-left"></i>
+                                            </button>
+                                        </th>
+                                        <th colspan="5">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-block text-strong" ng-click="$toggleMode()"><strong style="text-transform: capitalize" ng-bind="title" class="ng-binding">February
+                                        2016</strong></button>
+                                        </th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-right" ng-click="$selectPane(+1)"><i class="glyphicon glyphicon-chevron-right"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                    <tr ng-show="showLabels" ng-bind-html="labels" class="ng-binding">
+                                        <th class="dow text-center">Sun</th>
+                                        <th class="dow text-center">Mon</th>
+                                        <th class="dow text-center">Tue</th>
+                                        <th class="dow text-center">Wed</th>
+                                        <th class="dow text-center">Thu</th>
+                                        <th class="dow text-center">Fri</th>
+                                        <th class="dow text-center">Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">31</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">01</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">02</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">03</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">04</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">05</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">06</span></button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="16.666666666666668%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">07</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">08</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">09</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">10</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">11</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">12</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">13</span></button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="16.666666666666668%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">14</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">15</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">16</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">17</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">18</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">19</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">20</span></button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="16.666666666666668%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">21</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">22</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">23</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-primary" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">24</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">25</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">26</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">27</span></button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="16.666666666666668%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">28</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">29</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">01</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">02</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">03</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">04</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">05</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="16.666666666666668%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">06</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">07</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">08</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">09</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">10</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">11</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding text-muted">12</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="datepicker-container col-sm-4">
+                        <div class="dropdown-menu datepicker ng-scope bottom-left am-fade datepicker-mode-1" style="max-width: 320px; top: 34px; left: 0px; display: block; visibility: visible;">
+                            <table style="table-layout: fixed; height: 100%; width: 100%">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$selectPane(-1)"><i class="glyphicon glyphicon-chevron-left"></i>
+                                            </button>
+                                        </th>
+                                        <th colspan="2">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-block text-strong" ng-click="$toggleMode()"><strong style="text-transform: capitalize" ng-bind="title" class="ng-binding">2016</strong></button>
+                                        </th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-right" ng-click="$selectPane(+1)"><i class="glyphicon glyphicon-chevron-right"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                    <tr ng-show="showLabels" ng-bind-html="labels" class="ng-binding ng-hide">
+                                        <th class="dow text-center">Sun</th>
+                                        <th class="dow text-center">Mon</th>
+                                        <th class="dow text-center">Tue</th>
+                                        <th class="dow text-center">Wed</th>
+                                        <th class="dow text-center">Thu</th>
+                                        <th class="dow text-center">Fri</th>
+                                        <th class="dow text-center">Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%">
+                                                <span>Jan</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-primary" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Feb</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Mar</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Apr</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">May</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Jun</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Jul</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Aug</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Sep</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Oct</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Nov</span></button>
+                                        </td>
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">Dec</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="datepicker-container col-sm-4">
+                        <div class="dropdown-menu datepicker ng-scope bottom-left am-fade datepicker-mode-2" ng-class="'datepicker-mode-' + $mode" style="max-width: 320px; top: 32px; left: 0px; display: block; visibility: visible;">
+                            <table style="table-layout: fixed; height: 100%; width: 100%">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$selectPane(-1)"><i class="glyphicon glyphicon-chevron-left"></i>
+                                            </button>
+                                        </th>
+                                        <th colspan="2">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-block text-strong" ng-click="$toggleMode()"><strong style="text-transform: capitalize" ng-bind="title" class="ng-binding">2016-2027</strong>
+                                            </button>
+                                        </th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-right" ng-click="$selectPane(+1)"><i class="glyphicon glyphicon-chevron-right"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                    <tr ng-show="showLabels" ng-bind-html="labels" class="ng-binding ng-hide">
+                                        <th class="dow text-center">Sun</th>
+                                        <th class="dow text-center">Mon</th>
+                                        <th class="dow text-center">Tue</th>
+                                        <th class="dow text-center">Wed</th>
+                                        <th class="dow text-center">Thu</th>
+                                        <th class="dow text-center">Fri</th>
+                                        <th class="dow text-center">Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default btn-primary" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2016</span>
+                                            </button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2017</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2018</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2019</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2020</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2021</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2022</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2023</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" height="33.333333333333336%" class="ng-scope">
+                                        <!-- ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2024</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2025</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2026</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                        <td class="text-center ng-scope" ng-repeat="(j, el) in row">
+                                            <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{'btn-primary': el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled"><span ng-class="{'text-muted': el.muted}" ng-bind="el.label" class="ng-binding">2027</span></button>
+                                        </td>
+                                        <!-- end ngRepeat: (j, el) in row -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="datepicker-container col-sm-4">
+                        <div class="dropdown-menu timepicker ng-scope bottom-left am-fade" style="min-width: 0px; width: auto; top: 32px; left: 0px; display: block; visibility: visible;">
+                            <table>
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(-1, 0)"><i class="glyphicon glyphicon-chevron-up"></i>
+                                            </button>
+                                        </th>
+                                        <th>&nbsp;</th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(-1, 1)"><i class="glyphicon glyphicon-chevron-up"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">9</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding"> </span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">11</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">&nbsp;</td>
+                                        <!-- end ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">
+                                            <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !!isAM}" class="btn btn-default ng-hide btn-primary" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM
+                                            </button>
+                                            <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !isAM}" class="btn btn-default ng-hide" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM
+                                            </button>
+                                        </td>
+                                        <!-- end ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">10</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding"> </span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">16</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">&nbsp;</td>
+                                        <!-- end ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">
+                                            <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !!isAM}" class="btn btn-default ng-hide btn-primary" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM
+                                            </button>
+                                            <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !isAM}" class="btn btn-default ng-hide" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM
+                                            </button>
+                                        </td>
+                                        <!-- end ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default btn-primary" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">11</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding">:</span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope btn-primary" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">21</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">&nbsp;</td>
+                                        <!-- end ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">
+                                            <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !!isAM}" class="btn btn-default btn-primary" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM
+                                            </button>
+                                            <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !isAM}" class="btn btn-default ng-hide" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM
+                                            </button>
+                                        </td>
+                                        <!-- end ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">12</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding"> </span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">26</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">&nbsp;</td>
+                                        <!-- end ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">
+                                            <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !!isAM}" class="btn btn-default ng-hide btn-primary" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM
+                                            </button>
+                                            <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !isAM}" class="btn btn-default" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM
+                                            </button>
+                                        </td>
+                                        <!-- end ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">1</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding"> </span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">31</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">&nbsp;</td>
+                                        <!-- end ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                        <td ng-if="showAM" class="ng-scope">
+                                            <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !!isAM}" class="btn btn-default ng-hide btn-primary" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM
+                                            </button>
+                                            <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{'btn-primary': !isAM}" class="btn btn-default ng-hide" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM
+                                            </button>
+                                        </td>
+                                        <!-- end ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                </tbody>
+                                <tfoot>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(1, 0)"><i class="glyphicon glyphicon-chevron-down"></i>
+                                            </button>
+                                        </th>
+                                        <th>&nbsp;</th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(1, 1)"><i class="glyphicon glyphicon-chevron-down"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="datepicker-container col-sm-4">
+                        <div class="dropdown-menu timepicker ng-scope bottom-left am-fade" style="min-width: 0px; width: auto; top: 34px; left: 0px; display: block; visibility: visible;">
+                            <table height="100%">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(-1, 0)"><i class="glyphicon glyphicon-chevron-up"></i>
+                                            </button>
+                                        </th>
+                                        <th>&nbsp;</th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(-1, 1)"><i class="glyphicon glyphicon-chevron-up"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- ngRepeat: (i, row) in rows -->
+                                    <tr ng-repeat="(i, row) in rows" class="ng-scope">
+                                        <td class="text-center">
+                                            <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{'btn-primary': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled"><span ng-class="{'text-muted': row[0].muted}" ng-bind="row[0].label" class="ng-binding">11</span></button>
+                                        </td>
+                                        <td><span ng-bind="i == midIndex ? timeSeparator : ' '" class="ng-binding">:</span></td>
+                                        <td class="text-center">
+                                            <!-- ngIf: row[1].date -->
+                                            <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default ng-scope" ng-class="{'btn-primary': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled"><span ng-class="{'text-muted': row[1].muted}" ng-bind="row[1].label" class="ng-binding">37</span></button>
+                                            <!-- end ngIf: row[1].date -->
+                                        </td>
+                                        <!-- ngIf: showAM -->
+                                        <!-- ngIf: showAM -->
+                                    </tr>
+                                    <!-- end ngRepeat: (i, row) in rows -->
+                                </tbody>
+                                <tfoot>
+                                    <tr class="text-center">
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(1, 0)"><i class="glyphicon glyphicon-chevron-down"></i>
+                                            </button>
+                                        </th>
+                                        <th>&nbsp;</th>
+                                        <th>
+                                            <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$moveIndex(1, 1)"><i class="glyphicon glyphicon-chevron-down"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demo -->
+</body>
+
+</html>
